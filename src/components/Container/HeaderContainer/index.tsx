@@ -5,9 +5,14 @@ import clsx from "clsx";
 type HeaderContainerProps = {
   title: string;
   id: TaskType;
+  total: number;
 };
 
-const HeaderContainer: React.FC<HeaderContainerProps> = ({ title, id }) => {
+const HeaderContainer: React.FC<HeaderContainerProps> = ({
+  title,
+  id,
+  total,
+}) => {
   return (
     <div
       className={clsx(
@@ -17,7 +22,7 @@ const HeaderContainer: React.FC<HeaderContainerProps> = ({ title, id }) => {
         id === "complete" && "border-green-500"
       )}
     >
-      {title}
+      {title} <span>({total})</span>
     </div>
   );
 };

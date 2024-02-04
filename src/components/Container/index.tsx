@@ -24,8 +24,8 @@ const Container: React.FC<ContainerProps> = ({ title, items, id, index }) => {
       }}
       className="flex-shrink-0 w-80 flex flex-col space-y-8"
     >
-      <HeaderContainer title={title} id={id} />
-      <div className="flex flex-col space-y-3 h-[40vh] overflow-auto text-xs">
+      <HeaderContainer title={title} id={id} total={items.length} />
+      <div className="flex flex-col space-y-3 h-[40vh] overflow-auto text-sm">
         {items.map((item) => {
           return <ItemContainer key={uuidv4()} data={item} />;
         })}
